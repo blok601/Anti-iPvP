@@ -1,0 +1,7 @@
+name: AntiiPvP
+version: 1.0-SNAPSHOT
+main: me.blok601.antiipvp.Antiipvp
+prefix: iPvP
+authors: [blok601, Reddit_Community]
+description: AntiiPvP plugin for the reddit community
+website: uhc.gg
