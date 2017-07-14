@@ -2,6 +2,7 @@ package me.blok601.antiipvp.listener;
 
 import me.blok601.antiipvp.Antiipvp;
 import me.blok601.antiipvp.ChatUtils;
+import me.blok601.antiipvp.iPvPType;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -27,10 +28,12 @@ public class CoreListener implements Listener{
             case FLINT_AND_STEEL:
                 e.setCancelled(true);
                 p.sendMessage(ChatUtils.format("&cYou can't place flint and steel before PvP is enabled!"));
+                ChatUtils.sendAlertMessage(iPvPType.BURN, p);
                 break;
             case LAVA_BUCKET:
                 e.setCancelled(true);
                 p.sendMessage(ChatUtils.format("&cYou can't place lava before PvP is enabled!"));
+                ChatUtils.sendAlertMessage(iPvPType.BURN, p);
                 break;
         }
     }
