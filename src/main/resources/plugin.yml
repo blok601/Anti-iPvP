@@ -5,3 +5,6 @@ prefix: iPvP
 authors: [blok601, Reddit_Community]
 description: AntiiPvP plugin for the reddit community
 website: uhc.gg
+commands:
+  ipvp:
+    description: iPvP Toggler

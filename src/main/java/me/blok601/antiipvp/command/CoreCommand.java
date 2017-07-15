@@ -27,17 +27,15 @@ public class CoreCommand implements CommandExecutor{
                 return false;
             }else{
                 String option = args[0];
-                if(!option.equalsIgnoreCase("on") || !option.equalsIgnoreCase("off")){
-                    s.sendMessage(ChatColor.RED  + "Usage: /ipvp <on/off>");
-                    return false;
-                }
-
                 if(option.equalsIgnoreCase("on")){
                     Antiipvp.setiPvP(true);
                     s.sendMessage(ChatColor.GREEN + "iPvP is now on!");
                 }else if(option.equalsIgnoreCase("off")){
                     Antiipvp.setiPvP(false);
-                    s.sendMessage(ChatColor.GREEN + "iPvP is now on!");
+                    s.sendMessage(ChatColor.GREEN + "iPvP is now off!");
+                }else{
+                    s.sendMessage(ChatColor.RED  + "Usage: /ipvp <on/off>");
+                    return false;
                 }
 
                 return true;

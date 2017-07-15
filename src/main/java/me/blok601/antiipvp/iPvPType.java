@@ -5,6 +5,15 @@ package me.blok601.antiipvp;
  */
 public enum iPvPType {
 
-    BLOCKBREAK, SUFFOCATE, BURN
+    BLOCKBREAK(ChatUtils.format("&cBroke block under player")), SUFFOCATE(ChatUtils.format("&cPlaced Sand or gravel above player")), BURN(ChatUtils.format("Placed Lava or flint and steel"));
 
+    private String message;
+
+     iPvPType(String message){
+          this.message = message;
+    }
+
+    public String getMessage() {
+        return message;
+    }
 }

@@ -3,6 +3,7 @@ package me.blok601.antiipvp;
 import me.blok601.antiipvp.command.CoreCommand;
 import me.blok601.antiipvp.listener.CoreListener;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Antiipvp extends JavaPlugin {
@@ -14,8 +15,14 @@ public final class Antiipvp extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
+        getConfig().options().copyDefaults(true);
+        saveConfig();
         registerListeners();
         getCommand("ipvp").setExecutor(new CoreCommand());
+
+        for (Player player : Bukkit.getOnlinePlayers()){
+            CoreListener.vls.put(player.getUniqueId(), 0);
+        }
 
     }
 
